@@ -1,5 +1,7 @@
 package com.example;
 
 public class Didit {
-    fd
+    public static void main(String[] args) {
+
+    }
 }
