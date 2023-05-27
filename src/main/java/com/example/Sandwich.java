@@ -1,38 +1,16 @@
 package com.example;
 
 public class Sandwich {
-    private String Breadtype;
-    private double totalPrice;
-    private int Size;
-    private String topping;
+    private BreadChoice bread;
+    private Size size;
+    private boolean isToasted;
 
-    public Sandwich(String Breadtype, int Size, String topping){
-     this.Breadtype = Breadtype;
-     this.Size = Size;
-     this.topping = topping;
+    public Sandwich(BreadChoice bread, Size size) {
+        this.bread = bread;
+        this.size = size;
     }
 
-    public String getBreadtype() {
-        return Breadtype;
-    }
-
-    public void setBreadtype(String breadtype) {
-        Breadtype = breadtype;
-    }
-
-    public int getSize() {
-        return Size;
-    }
-
-    public void setSize(int size) {
-        Size = size;
-    }
-
-    public String getTopping() {
-        return topping;
-    }
-
-    public void setTopping(String topping) {
-        this.topping = topping;
+    public void setToasted(boolean toasted) {
+        isToasted = toasted;
     }
 }
