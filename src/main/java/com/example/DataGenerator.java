@@ -1,39 +1,60 @@
 package com.example;
 
-import smile.math.MathEx;
-import smile.math.Random;
-
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DataGenerator {
-    private static final String[] breads = {"white", "wheat", "rye", "wrap"};
-    private static final String[] sizes = {"4\"", "8\"", "12\""};
-    private static final String[] meats = {"ham", "turkey", "beef"};
+    private List<UserItemInteraction> userItemInteractions;
+    private List<CustomSandwich> sandwiches;
+    private int numUsers;
 
-    private static final double[] breadProbabilities = {0.4,0.3,0.2,0.1};
-    private static final double[] sizeProbabilities = {0.1,0.7,0.2};
-    private static final double[] meatProbablities = {0.5, 0.3, 0.2};
+    public DataGenerator() {
+        userItemInteractions = new ArrayList<>();
+        sandwiches = new ArrayList<>();
+        numUsers = 0;
 
-    public static Map<String, String> generate() {
-        Map<String, String> makeBelieveData = new HashMap<>();
+        String[] sandwichNames = { "Italian Sub", "Philly Cheese Steak", "Reuben", "Club Sandwich", "BLT" };
+        String[][] sandwichIngredients = {
+                { "Ham", "Salami", "Pepperoni", "Provolone", "Lettuce", "Tomatoes", "Onions", "Peppers", "Oil", "Vinegar" },
+                { "Steak", "Provolone", "Onions", "Peppers", "Mushrooms" },
+                { "Corned Beef", "Swiss", "Sauerkraut", "Thousand Islands", "Rye Bread" },
+                { "Turkey", "Ham", "Bacon", "American Cheese", "Lettuce", "Tomatoes", "Mayo", "Toasted Bread" },
+                { "Bacon", "Lettuce", "Tomatoes", "Mayo", "Toasted Bread" }
+        };
+        String[] sandwichBreadTypes = { "White", "Wheat", "Rye", "Wrap","Five Grain"};
+        String[] sandwichTasteProfile = { "Medium", "Sweet", "Tangy", "Vegetarian", "Crispy" };
 
-        makeBelieveData.put("bread",breads[distribution(breadProbabilities)]);
-        makeBelieveData.put("size", sizes[distribution(sizeProbabilities)]);
-        makeBelieveData.put("meats", meats[distribution(meatProbablities)]);
+        for (int i = 0; i < sandwichNames.length; i++) {
+            CustomSandwich sandwich = new CustomSandwich(sandwichNames[i], sandwichBreadTypes[i], sandwichTasteProfile[i], Arrays.asList(sandwichIngredients[i]));
+            sandwich.setId(i);
+            sandwiches.add(sandwich);
+        }
 
-        return makeBelieveData;
+        for (UserItemInteraction interaction : userItemInteractions) {
+            int userId = interaction.getUserId();
+            numUsers = Math.max(numUsers, userId + 1);
+        }
     }
 
-    private static int distribution(double[] probabilities) {
-        double r = MathEx.random();
-        double totalProbability = 0.0;
-        for(int i = 0; i < probabilities.length; i++) {
-            totalProbability += probabilities[i];
-            if (r <= totalProbability) {
-                return i;
-            }
-        }
-        return probabilities.length - 1;
+    public int getNumSandwiches() {
+        return sandwiches.size();
+    }
+
+    public int getNumUsers() {
+        return numUsers;
+    }
+
+    public CustomSandwich getSandwich(int index) {
+        return sandwiches.get(index);
+    }
+
+    public void addUserItemInteraction(int userId, int itemId, double rating) {
+        UserItemInteraction interaction = new UserItemInteraction(userId, itemId, rating);
+        userItemInteractions.add(interaction);
+    }
+
+    public List<UserItemInteraction> getUserItemInteractions() {
+        return userItemInteractions;
     }
 }
