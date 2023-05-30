@@ -6,7 +6,7 @@ public class Chip {
     private boolean isChip;
     private double cost;
 
-    public Chip(String name, boolean isChip) {
+    public Chip(String name) {
         this.name = name;
         this.isChip = isChip;
         this.cost = 1.50;

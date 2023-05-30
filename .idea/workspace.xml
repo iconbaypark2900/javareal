@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b461ae60-fa13-4bd1-9e1a-1d6c3d8f4239" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Chip.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Drink.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Chip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Chip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Didit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Didit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/Sandwich.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,18 +34,25 @@
     </option>
   </component>
   <component name="ProjectId" id="2QLGnJpyFDtgXfSEmVYcH1NylI9" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "secbranch",
-    "last_opened_file_path": "/Users/jahilewis/AntJon/javareal"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;secbranch&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jahilewis/AntJon/javareal&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Didit" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.Didit" />
@@ -79,5 +83,8 @@
       <updated>1685125616435</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

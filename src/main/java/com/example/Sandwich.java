@@ -9,11 +9,19 @@ public class Sandwich {
     private double totalPrice;
     private int Size;
     private boolean isToasted;
-    private List<String> topping;
+    private List<String> mTopping;
+    private List<String> cTopping;
+    private List<String> rTopping;
+    private List<String> sTopping;
+
+    //Array storing Meat Menu Options
     private final String [] Meat = {"steak", "ham", "salami","roast beef", "chicken"};
+    //Array storing Cheese Menu Options
     private final String [] Cheese = {"american", "provolone", "chedder","swiss"};
+    //Array storing Regular Menu Options
     private final String [] regToppings = {"Lettuce", "peppers", "onions","tomatoes", "jalepenos","cucumbers"
     ,"guacamole","pickles","mushrooms"};
+    //Array storing Sauces Menu Options
     private final String [] Sauces = {"mayo", "mustard", "ketchup","ranch", "thousand islands","vinaigrette"};
 
     Scanner scan = new Scanner(System.in);
@@ -22,7 +30,10 @@ public class Sandwich {
      this.Breadtype = Breadtype;
      this.Size = Size;
      this.isToasted = isToasted;
-     this.topping = new ArrayList<>();
+     this.mTopping = new ArrayList<>();
+     this.cTopping = new ArrayList<>();
+     this.rTopping = new ArrayList<>();
+     this.sTopping = new ArrayList<>();
 
      if(Size == 4){
          totalPrice += 5.50;
@@ -43,7 +54,7 @@ public class Sandwich {
         // This loop goes though the meat array search if there is a match
         for (String str : Meat) {
                 if (meatTop.equalsIgnoreCase(str)) {
-                    this.topping.add(str);
+                    this.mTopping.add(str);
                     if(getSize() == 4) {
                         this.totalPrice += 1;
                     } else if (getSize() == 8) {
@@ -65,7 +76,7 @@ public class Sandwich {
                 String extraTopping = scan.nextLine();
                 for (String str : Meat) {
                     if (extraTopping.equalsIgnoreCase(str)) {
-                        this.topping.add(str);
+                        this.mTopping.add(str);
                         if(getSize() == 4) {
                             this.totalPrice += .50;
                         } else if (getSize() == 8) {
@@ -85,7 +96,7 @@ public class Sandwich {
         // This loop goes though the cheese array search if there is a match
         for (String str : Cheese) {
             if (cheese.equalsIgnoreCase(str)) {
-                this.topping.add(str);
+                this.cTopping.add(str);
                 if(getSize() == 4) {
                     this.totalPrice += .75;
                 } else if (getSize() == 8) {
@@ -107,7 +118,7 @@ public class Sandwich {
             String extraTopping = scan.nextLine();
             for (String str : Cheese) {
                 if (extraTopping.equalsIgnoreCase(str)) {
-                    this.topping.add(str);
+                    this.cTopping.add(str);
                     if(getSize() == 4) {
                         this.totalPrice += .30;
                     } else if (getSize() == 8) {
@@ -128,7 +139,7 @@ public class Sandwich {
             System.out.println("Type 1 for Yes or 2 for No");
             int ans = scan.nextInt();
             if (ans == 1){
-                this.topping.add(str);
+                this.rTopping.add(str);
             }
         }
     }
@@ -139,7 +150,7 @@ public class Sandwich {
             System.out.println("Type 1 for Yes or 2 for No");
             int ans = scan.nextInt();
             if (ans == 1){
-                this.topping.add(str);
+                this.sTopping.add(str);
             }
         }
     }
@@ -162,8 +173,17 @@ public class Sandwich {
         Size = size;
     }
 
-    public List<String> getToppingList(){
-        return this.topping;
+    public List<String> getMeatToppingList(){
+        return this.mTopping;
+    }
+    public List<String> getCheeseToppingList(){
+        return this.cTopping;
+    }
+    public List<String> getRegToppingList(){
+        return this.rTopping;
+    }
+    public List<String> getSauceToppingList(){
+        return this.sTopping;
     }
 
     public double getTotalPrice() {
@@ -172,5 +192,17 @@ public class Sandwich {
 
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public boolean isToasted() {
+        return isToasted;
+    }
+
+    public void setToasted(boolean toasted) {
+        isToasted = toasted;
+    }
+
+    public String[] regToppings(){
+        return regToppings;
     }
 }
