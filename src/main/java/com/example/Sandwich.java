@@ -44,36 +44,29 @@ public class Sandwich {
      else if(Size == 12) {
          totalPrice += 8.50;
      }
-
-
     }
 
     //Method to add Meat Topping
-    public void addMTopping(String meatTop){
+    public void addMTopping(String meatTop) {
 
         // This loop goes though the meat array search if there is a match
         for (String str : Meat) {
-                if (meatTop.equalsIgnoreCase(str)) {
-                    this.mTopping.add(str);
-                    if(getSize() == 4) {
-                        this.totalPrice += 1;
-                    } else if (getSize() == 8) {
-                        this.totalPrice += 2;
-                    }
-                    else if (getSize() == 12) {
-                        this.totalPrice += 3;
-                    }
+            if (meatTop.equalsIgnoreCase(str)) {
+                this.mTopping.add(str);
+                if (getSize() == 4) {
+                    this.totalPrice += 1;
+                } else if (getSize() == 8) {
+                    this.totalPrice += 2;
+                } else if (getSize() == 12) {
+                    this.totalPrice += 3;
                 }
-                }
+            }
+        }
+    }
 
-            System.out.println("Would you like to add extra meat");
-            System.out.println("Please enter 1 for Yes or 2 for No");
-            int num = scan.nextInt();
-            if (num == 1) {
-                System.out.println("What extra meat would you like to add");
-                scan.nextLine();
-                //This line adds the extra topping to sandwich
-                String extraTopping = scan.nextLine();
+
+        //This method allows the User to add extra meat
+        public void addExtraMeat(String extraTopping){
                 for (String str : Meat) {
                     if (extraTopping.equalsIgnoreCase(str)) {
                         this.mTopping.add(str);
@@ -89,33 +82,26 @@ public class Sandwich {
                 }
             }
 
-    }
 
 
-    public void addCTopping(String cheese){
+
+    public void addCTopping(String cheese) {
         // This loop goes though the cheese array search if there is a match
         for (String str : Cheese) {
             if (cheese.equalsIgnoreCase(str)) {
                 this.cTopping.add(str);
-                if(getSize() == 4) {
+                if (getSize() == 4) {
                     this.totalPrice += .75;
                 } else if (getSize() == 8) {
                     this.totalPrice += 1.50;
-                }
-                else if (getSize() == 12) {
+                } else if (getSize() == 12) {
                     this.totalPrice += 2.25;
                 }
             }
         }
+    }
 
-        System.out.println("Would you like to add extra cheese");
-        System.out.println("Please enter 1 for Yes or 2 for No");
-        int num = scan.nextInt();
-        if (num == 1) {
-            System.out.println("What extra cheese would you like to add");
-            scan.nextLine();
-            //This line adds the extra topping to sandwich
-            String extraTopping = scan.nextLine();
+    public void addExtraCheese(String extraTopping){
             for (String str : Cheese) {
                 if (extraTopping.equalsIgnoreCase(str)) {
                     this.cTopping.add(str);
@@ -131,29 +117,15 @@ public class Sandwich {
             }
         }
 
+    public void addRegularTopping(String str){
+        this.rTopping.add(str);
     }
 
-    public void addTopping(){
-        for(String str : regToppings){
-            System.out.println("Would you like to add " + str + " to your sandwich");
-            System.out.println("Type 1 for Yes or 2 for No");
-            int ans = scan.nextInt();
-            if (ans == 1){
-                this.rTopping.add(str);
-            }
-        }
+    public void addSauces(String str){
+        this.sTopping.add(str);
     }
 
-    public void addSauces(){
-        for(String str : Sauces){
-            System.out.println("Would you like to add " + str + " to your sandwich");
-            System.out.println("Type 1 for Yes or 2 for No");
-            int ans = scan.nextInt();
-            if (ans == 1){
-                this.sTopping.add(str);
-            }
-        }
-    }
+
 
 
 
@@ -205,4 +177,8 @@ public class Sandwich {
     public String[] regToppings(){
         return regToppings;
     }
+    public String[] sToppings(){
+        return Sauces;
+    }
+
 }

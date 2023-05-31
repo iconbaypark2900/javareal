@@ -62,6 +62,55 @@ public class Didit {
                     }
                     //Creating the Sandwich
                     Sandwich CRABBYPATTY = new Sandwich(breadtype,size,toast);
+                    System.out.println("MEAT TOPPING OPTIONS - STEAK, HAM, SALAMI, ROAST BEEF, CHICKEN,");
+                    System.out.println("ONLY ONE OPTION ALLOWED!!. PLEASE ENTER YOUR CHOICE");
+                    scan.nextLine();
+                    String mopt = scan.nextLine();
+                    CRABBYPATTY.addMTopping(mopt);
+                    System.out.println("Would you like to add extra meat");
+                    System.out.println("Please enter 1 for Yes or 2 for No");
+                    int num = scan.nextInt();
+                    if (num == 1) {
+                        System.out.println("What extra meat would you like to add");
+                        scan.nextLine();
+                        //This line adds the extra topping to sandwich
+                        String extraTopping = scan.nextLine();
+                        CRABBYPATTY.addExtraMeat(extraTopping);
+                    }
+                    System.out.println("CHEESE TOPPING OPTIONS - AMERICAN,PROVOLONE,CHEDDER,SWISS");
+                    System.out.println("ONLY ONE OPTION ALLOWED!!. PLEASE ENTER YOUR CHOICE");
+                    scan.nextLine();
+                    String Copt = scan.nextLine();
+                    CRABBYPATTY.addCTopping(Copt);
+                    System.out.println("Would you like to add extra cheese");
+                    System.out.println("Please enter 1 for Yes or 2 for No");
+                    int num34 = scan.nextInt();
+                    if (num34 == 1) {
+                        System.out.println("What extra cheese would you like to add");
+                        scan.nextLine();
+                        //This line adds the extra topping to sandwich
+                        String extraTopping = scan.nextLine();
+                        CRABBYPATTY.addExtraCheese(extraTopping);
+                    }
+                    //This loops through the ArrayList for all Regular Toppings
+                    for(String str : CRABBYPATTY.regToppings()){
+                       System.out.println("Would you like to add " + str + " to your sandwich");
+                       System.out.println("Type 1 for Yes or 2 for No");
+                       int ans56 = scan.nextInt();
+                       if (ans56 == 1){
+                           CRABBYPATTY.addRegularTopping(str);
+                       }
+                   }
+
+                    //This loops through the ArrayList for all Sauce Toppings
+                    for(String str : CRABBYPATTY.sToppings()){
+                        System.out.println("Would you like to add " + str + " to your sandwich");
+                        System.out.println("Type 1 for Yes or 2 for No");
+                        int ans66 = scan.nextInt();
+                        if (ans66 == 1){
+                            CRABBYPATTY.addSauces(str);
+                        }
+                    }
                     //Adding the Sandwich to the Order
                     VIP.addSandWICH(CRABBYPATTY);
 
@@ -99,6 +148,7 @@ public class Didit {
                     if(ans2 == 1){
                         // This function saves your oder.
                         VIP.saveorder();
+                        VIP.deleteorder();
                         break;
                     }
                     else{
