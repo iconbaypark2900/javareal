@@ -25,22 +25,7 @@ public class Order {
     }
 
     public void addSandWICH(Sandwich meal){
-        System.out.println("MEAT TOPPING OPTIONS - STEAK, HAM, SALAMI, ROAST BEEF, CHICKEN,");
-        System.out.println("ONLY ONE OPTION ALLOWED!!. PLEASE ENTER YOUR CHOICE");
-        String mopt = scan.nextLine();
-        // This function adds the User's meat toppings
-        meal.addMTopping(mopt);
-        System.out.println("CHEESE TOPPING OPTIONS - AMERICAN,PROVOLONE,CHEDDER,SWISS");
-        System.out.println("ONLY ONE OPTION ALLOWED!!. PLEASE ENTER YOUR CHOICE");
-        String Copt = scan.nextLine();
-        //This function adds the User's Cheese toppings
-        meal.addCTopping(mopt);
-        //This function adds the User's Regular toppings
-        meal.addTopping();
-        //This function adds the User's Sauce toppings
-        meal.addSauces();
         this.sandwichList.add(meal);
-
     }
 
     public void addDrinks(Drink juice){
@@ -76,13 +61,13 @@ public class Order {
                 // Prints the cheese topping list
                 System.out.println("Cheese toppings for Sandwich# " + mcount + " :" + crabypatty.getCheeseToppingList());
             }// constraint to check if loop is empty
-            if (crabypatty.getRegToppingList() == null){
+            if (crabypatty.getRegToppingList() == null || crabypatty.getRegToppingList().isEmpty()){
                 System.out.println("No Regular toppings selected for Sandwich# " + mcount);
             }else {
                 // Prints the Regular topping list
                 System.out.println("Regular toppings for Sandwich# " + mcount + " :" + crabypatty.getRegToppingList());
             }// constraint to check if loop is empty
-            if(crabypatty.getSauceToppingList() == null){
+            if(crabypatty.getSauceToppingList() == null || crabypatty.getSauceToppingList().isEmpty()){
                 System.out.println("No Sauce toppings selected for Sandwich# " + mcount);
             }else{
                 // Prints the sauces topping list
