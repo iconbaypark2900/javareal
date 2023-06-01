@@ -1,52 +1,38 @@
 package com.example;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomSandwich {
     private String name;
-    private String breadType;
-    private String tasteProfile;
     private List<String> ingredients;
-    private double predictedRating;
-    private int id;
 
-    public CustomSandwich(String name, String breadType, String tasteProfile, List<String> ingredients) {
+    public CustomSandwich(String name, List<String> ingredients) {
         this.name = name;
-        this.breadType = breadType;
-        this.tasteProfile = tasteProfile;
-        this.ingredients = ingredients;
+        this.ingredients = new ArrayList<>(ingredients);
     }
 
     public String getName() {
         return name;
     }
 
-    public String getBreadType() {
-        return breadType;
-    }
-
-    public String getTasteProfile() {
-        return tasteProfile;
-    }
-
     public List<String> getIngredients() {
         return ingredients;
     }
 
-    public double getPredictedRating() {
-        return predictedRating;
+    public boolean hasIngredient(String ingredient) {
+        return ingredients.contains(ingredient);
     }
 
-    public void setPredictedRating(double predictedRating) {
-        this.predictedRating = predictedRating;
+    // You can add or remove ingredients from the sandwich
+    public void addIngredient(String ingredient) {
+        if (!ingredients.contains(ingredient)) {
+            ingredients.add(ingredient);
+        }
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void removeIngredient(String ingredient) {
+        ingredients.remove(ingredient);
     }
 }
 
