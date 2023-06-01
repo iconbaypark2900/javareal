@@ -6,10 +6,12 @@ import java.util.List;
 public class CustomSandwich {
     private String name;
     private List<String> ingredients;
+    private double price;
 
-    public CustomSandwich(String name, List<String> ingredients) {
+    public CustomSandwich(String name, List<String> ingredients, double price) {
         this.name = name;
         this.ingredients = new ArrayList<>(ingredients);
+        this.price = price;
     }
 
     public String getName() {
@@ -33,6 +35,10 @@ public class CustomSandwich {
 
     public void removeIngredient(String ingredient) {
         ingredients.remove(ingredient);
+    }
+
+    public double getPrice() {
+        return price;
     }
 }
 
