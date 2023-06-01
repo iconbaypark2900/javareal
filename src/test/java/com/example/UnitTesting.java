@@ -11,6 +11,431 @@ class UnitTesting {
     private Drink drink;
     private Order order;
 
+    @Test
+    public void checkEntireMealPrice1(){
+        sandwich = new Sandwich("wheat", 4, false);
+        chip = new Chip("doritos");
+        drink = new Drink("small", "coke");
+        sandwich.addMTopping("chicken");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(10, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice2(){
+        sandwich = new Sandwich("wheat", 4, false);
+        chip = new Chip("doritos");
+        drink = new Drink("medium", "coke");
+        sandwich.addMTopping("chicken");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(10.5, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice3(){
+        sandwich = new Sandwich("wheat", 4, false);
+        chip = new Chip("doritos");
+        drink = new Drink("large", "coke");
+        sandwich.addMTopping("chicken");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(11, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice4(){
+        sandwich = new Sandwich("wheat", 8, false);
+        chip = new Chip("doritos");
+        drink = new Drink("small", "coke");
+        sandwich.addMTopping("chicken");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(12.5, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice5(){
+        sandwich = new Sandwich("wheat", 8, false);
+        chip = new Chip("doritos");
+        drink = new Drink("medium", "coke");
+        sandwich.addMTopping("chicken");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(13, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice6(){
+        sandwich = new Sandwich("wheat", 8, false);
+        chip = new Chip("doritos");
+        drink = new Drink("large", "coke");
+        sandwich.addMTopping("chicken");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(13.5, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice7(){
+        sandwich = new Sandwich("wheat", 12, false);
+        chip = new Chip("doritos");
+        drink = new Drink("small", "coke");
+        sandwich.addMTopping("chicken");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(15, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice8(){
+        sandwich = new Sandwich("wheat", 12, false);
+        chip = new Chip("doritos");
+        drink = new Drink("medium", "coke");
+        sandwich.addMTopping("chicken");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(15.5, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice9(){
+        sandwich = new Sandwich("wheat", 12, false);
+        chip = new Chip("doritos");
+        drink = new Drink("large", "coke");
+        sandwich.addMTopping("chicken");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(16, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice10(){
+        sandwich = new Sandwich("wheat", 4, false);
+        chip = new Chip("doritos");
+        drink = new Drink("small", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(10.75, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice11(){
+        sandwich = new Sandwich("wheat", 4, false);
+        chip = new Chip("doritos");
+        drink = new Drink("medium", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(11.25, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice12(){
+        sandwich = new Sandwich("wheat", 4, false);
+        chip = new Chip("doritos");
+        drink = new Drink("large", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(11.75, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice13(){
+        sandwich = new Sandwich("wheat", 8, false);
+        chip = new Chip("doritos");
+        drink = new Drink("small", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(14, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice14(){
+        sandwich = new Sandwich("wheat", 8, false);
+        chip = new Chip("doritos");
+        drink = new Drink("medium", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(14.5, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice15(){
+        sandwich = new Sandwich("wheat", 8, false);
+        chip = new Chip("doritos");
+        drink = new Drink("large", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(15, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice16(){
+        sandwich = new Sandwich("wheat", 12, false);
+        chip = new Chip("doritos");
+        drink = new Drink("small", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(17.25, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice17(){
+        sandwich = new Sandwich("wheat", 12, false);
+        chip = new Chip("doritos");
+        drink = new Drink("medium", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(17.75, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice18(){
+        sandwich = new Sandwich("wheat", 12, false);
+        chip = new Chip("doritos");
+        drink = new Drink("large", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(18.25, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice19(){
+        sandwich = new Sandwich("wheat", 4, false);
+        chip = new Chip("doritos");
+        drink = new Drink("small", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(11.25, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice20(){
+        sandwich = new Sandwich("wheat", 4, false);
+        chip = new Chip("doritos");
+        drink = new Drink("small", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(11.25, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice21(){
+        sandwich = new Sandwich("wheat", 4, false);
+        chip = new Chip("doritos");
+        drink = new Drink("medium", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(11.75, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice22(){
+        sandwich = new Sandwich("wheat", 4, false);
+        chip = new Chip("doritos");
+        drink = new Drink("large", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(12.25, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice23(){
+        sandwich = new Sandwich("wheat", 8, false);
+        chip = new Chip("doritos");
+        drink = new Drink("small", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(15, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice24(){
+        sandwich = new Sandwich("wheat", 8, false);
+        chip = new Chip("doritos");
+        drink = new Drink("medium", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(15.5, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice25(){
+        sandwich = new Sandwich("wheat", 8, false);
+        chip = new Chip("doritos");
+        drink = new Drink("large", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(16, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice26(){
+        sandwich = new Sandwich("wheat", 12, false);
+        chip = new Chip("doritos");
+        drink = new Drink("small", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(18.75, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice27(){
+        sandwich = new Sandwich("wheat", 12, false);
+        chip = new Chip("doritos");
+        drink = new Drink("medium", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(19.25, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice28(){
+        sandwich = new Sandwich("wheat", 12, false);
+        chip = new Chip("doritos");
+        drink = new Drink("large", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(19.75, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice29(){
+        sandwich = new Sandwich("wheat", 4, false);
+        chip = new Chip("doritos");
+        drink = new Drink("small", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        sandwich.addExtraCheese("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(11.55, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice30(){
+        sandwich = new Sandwich("wheat", 4, false);
+        chip = new Chip("doritos");
+        drink = new Drink("medium", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        sandwich.addExtraCheese("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(12.05, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice31(){
+        sandwich = new Sandwich("wheat", 4, false);
+        chip = new Chip("doritos");
+        drink = new Drink("large", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        sandwich.addExtraCheese("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(12.55, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice32(){
+        sandwich = new Sandwich("wheat", 8, false);
+        chip = new Chip("doritos");
+        drink = new Drink("small", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        sandwich.addExtraCheese("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(15.60, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice33(){
+        sandwich = new Sandwich("wheat", 8, false);
+        chip = new Chip("doritos");
+        drink = new Drink("medium", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        sandwich.addExtraCheese("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(16.10, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice34(){
+        sandwich = new Sandwich("wheat", 8, false);
+        chip = new Chip("doritos");
+        drink = new Drink("large", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        sandwich.addExtraCheese("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(16.60, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice35(){
+        sandwich = new Sandwich("wheat", 12, false);
+        chip = new Chip("doritos");
+        drink = new Drink("small", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        sandwich.addExtraCheese("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(19.65, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice36(){
+        sandwich = new Sandwich("wheat", 12, false);
+        chip = new Chip("doritos");
+        drink = new Drink("medium", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        sandwich.addExtraCheese("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(20.15, sum);
+    }
+
+    @Test
+    public void checkEntireMealPrice37(){
+        sandwich = new Sandwich("wheat", 12, false);
+        chip = new Chip("doritos");
+        drink = new Drink("large", "coke");
+        sandwich.addMTopping("chicken");
+        sandwich.addExtraMeat("chicken");
+        sandwich.addCTopping("swiss");
+        sandwich.addExtraCheese("swiss");
+        double sum = sandwich.getTotalPrice() + chip.getCost() + drink.getCost();
+        assertEquals(20.65, sum);
+    }
 
     @Test
     public void checkSandwich1(){
