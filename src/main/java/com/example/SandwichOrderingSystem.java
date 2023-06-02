@@ -43,6 +43,7 @@ public class SandwichOrderingSystem {
         System.out.println("Based on your preferred ingredients, we recommend the: " + recommendedSandwich);
 
         double price = menu.get(recommendedSandwich).getPrice();
+        System.out.println("The total cost of the " + recommendedSandwich + " is: $" + price);
 
         try {
             FileWriter fileWriter = new FileWriter("Recommender.csv", true); // Append to the existing file
